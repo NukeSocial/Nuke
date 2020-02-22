@@ -33,7 +33,7 @@ module Mastodon
     end
 
     def repository
-      ENV.fetch('GITHUB_REPOSITORY') { 'tootsuite/mastodon' }
+      ENV.fetch('GITHUB_REPOSITORY') { 'nukesocial/nuke' }
     end
 
     def source_base_url
@@ -56,9 +56,6 @@ module Mastodon
     def user_agent
       @user_agent ||= "#{HTTP::Request::USER_AGENT} (Mastodon/#{Version}; +http#{Rails.configuration.x.use_https ? 's' : ''}://#{Rails.configuration.x.web_domain}/)"
     end
-
-    def pseudo_user_agent
-      @pseudo_user_agent ||= 'Misskey/11.37.1 (https://misskey.noellabo.jp)'
-    end
+    
   end
 end
